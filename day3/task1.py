@@ -15,7 +15,6 @@ with open(os.path.dirname(os.path.realpath(__file__)) + "/input.txt", "r") as fi
             if line[i] > line[maxj2_index]:
                 maxj2_index = i
         
-        t= int(f"{line[maxj1_index]}{line[maxj2_index]}")
-        totalj += t
+        totalj += int(f"{line[maxj1_index]}{line[maxj2_index]}")
 
 print(totalj)
