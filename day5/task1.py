@@ -3,6 +3,8 @@ import bisect
 
 class SortedMap:
     def __init__(self):
+        # we maintain an ordered list of all ranges minimums
+        # as well as a second list for their corresponding maximums
         self.keys = [] #min of each range
         self.values = [] #max of each range
 
@@ -14,7 +16,7 @@ class SortedMap:
         return False, idx
 
     def insert(self, key, value):
-        # O(logn)
+        # O(n) due to shifting
         exists, idx = self.find(key)
         if exists:
             return idx  # key already exists
@@ -23,13 +25,12 @@ class SortedMap:
         return idx
     
     def insertat(self, idx, key, value):
-        # O(1)
         self.keys.insert(idx, key)
         self.values.insert(idx, value)
 
     def cleanup(self):
         # cleanup overlapping ranges
-        # if the maximum of the (n)th range falls within the (n+1)th range, dissolve n range by setting (n+1)'s minimum to the minimum of the two
+        # if the maximum of the (n)th range falls within the (n+1)th range, dissolve (n)th range by setting (n+1)'s minimum to the minimum of the two
         # similarly we shall dissolve (n)th range if its minimum falls within the (n-1)th range.
         while True: 
             for i in range(1, len(self.keys)):
