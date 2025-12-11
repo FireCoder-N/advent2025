@@ -128,7 +128,6 @@ To repair the teleporter, you first need to understand the beam-splitting proper
 
 Analyze your manifold diagram. How many times will the beam be split?
 
-The first half of this puzzle is complete! It provides one gold star: *
 --- Part Two ---
 
 With your analysis of the manifold complete, you begin fixing the teleporter. However, as you open the side of the teleporter to replace the broken manifold, you are surprised to discover that it isn't a classical tachyon manifold - it's a quantum tachyon manifold.
