@@ -1,7 +1,6 @@
 import os
 
 data = []
-total = 1
 max_area = 0
 
 with open(os.path.dirname(os.path.realpath(__file__)) + "/input.txt", "r") as file:
