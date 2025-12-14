@@ -4,6 +4,15 @@ data = []
 max_area = 0
 
 def point_in_polygon(point, polygon):
+    """
+    Check if a point lies within a polygon.
+
+    Credit: Geek for geeks
+    https://www.geeksforgeeks.org/dsa/how-to-check-if-a-given-point-lies-inside-a-polygon/
+    
+    :param point: point to check if it belongs in convex hull
+    :param polygon: list of points of the polygon
+    """
     num_vertices = len(polygon)
     x, y = point[0], point[1]
     inside = False
@@ -23,7 +32,7 @@ def point_in_polygon(point, polygon):
                 # Check if the point is to the left of the maximum x coordinate of the edge
                 if x <= max(p2[0], p1[0]):
                     # Calculate the x-intersection of the line connecting the point to the edge
-                    x_intersection = (y - p1[0]) * (p2[0] - p1[0]) / (p2[1] - p1[1]) + p1[0]
+                    x_intersection = (y - p1[1]) * (p2[0] - p1[0]) / (p2[1] - p1[1]) + p1[0]
 
                     # Check if the point is on the same line as the edge or to the left of the x-intersection
                     if p1[0] == p2[0] or x <= x_intersection:
